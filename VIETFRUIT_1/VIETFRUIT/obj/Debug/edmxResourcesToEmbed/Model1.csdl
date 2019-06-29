@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QL_VIETFRUIT_1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CHI_TIET_HOA_DON">
+    <Key>
+      <PropertyRef Name="MA_HOA_DON" />
+      <PropertyRef Name="MA_SAN_PHAM" />
+    </Key>
+    <Property Name="MA_HOA_DON" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MA_SAN_PHAM" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="KHOI_LUONG" Type="Double" Nullable="false" />
+    <Property Name="DON_GIA" Type="Double" Nullable="false" />
+    <Property Name="THANH_TIEN" Type="Double" Nullable="false" />
+    <NavigationProperty Name="HOA_DON" Relationship="Self.FK__CHI_TIET___MA_HO__398D8EEE" FromRole="CHI_TIET_HOA_DON" ToRole="HOA_DON" />
+    <NavigationProperty Name="KHO_SAN_PHAM" Relationship="Self.FK__CHI_TIET___MA_SA__3A81B327" FromRole="CHI_TIET_HOA_DON" ToRole="KHO_SAN_PHAM" />
+  </EntityType>
+  <EntityType Name="CHUC_NANG">
+    <Key>
+      <PropertyRef Name="MA_CHUC_NANG" />
+    </Key>
+    <Property Name="MA_CHUC_NANG" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TEN_CHUC_NANG" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="TRANG_THAI" Relationship="Self.FK__TRANG_THA__MA_CH__74AE54BC" FromRole="CHUC_NANG" ToRole="TRANG_THAI" />
+  </EntityType>
+  <EntityType Name="GIO_LAM">
+    <Key>
+      <PropertyRef Name="MA_NHAN_VIEN" />
+      <PropertyRef Name="MA_GiO_LAM" />
+    </Key>
+    <Property Name="MA_NHAN_VIEN" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MA_GiO_LAM" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NGAY_LAM" Type="DateTime" Precision="3" />
+    <Property Name="GIO_LAM1" Type="Double" />
+    <NavigationProperty Name="NHAN_VIEN" Relationship="Self.FK__GIO_LAM__MA_NHAN__160F4887" FromRole="GIO_LAM" ToRole="NHAN_VIEN" />
+  </EntityType>
+  <EntityType Name="HOA_DON">
+    <Key>
+      <PropertyRef Name="MA_HOA_DON" />
+    </Key>
+    <Property Name="MA_HOA_DON" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MA_NHAN_VIEN" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MA_KHACH_HANG" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="NGAY_TAO" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TONG_TIEN" Type="Double" Nullable="false" />
+    <NavigationProperty Name="CHI_TIET_HOA_DON" Relationship="Self.FK__CHI_TIET___MA_HO__398D8EEE" FromRole="HOA_DON" ToRole="CHI_TIET_HOA_DON" />
+    <NavigationProperty Name="KHACH_HANG" Relationship="Self.FK__HOA_DON__MA_KHAC__36B12243" FromRole="HOA_DON" ToRole="KHACH_HANG" />
+    <NavigationProperty Name="NHAN_VIEN" Relationship="Self.FK__HOA_DON__MA_NHAN__35BCFE0A" FromRole="HOA_DON" ToRole="NHAN_VIEN" />
+  </EntityType>
+  <EntityType Name="KHACH_HANG">
+    <Key>
+      <PropertyRef Name="MA_KHACH_HANG" />
+    </Key>
+    <Property Name="MA_KHACH_HANG" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="HO_TEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GIOI_TINH" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NGAY_SINH" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SO_DIEN_THOAI" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="SCMND" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="DIEM_TICH_LUY" Type="Int32" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DIA_CHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ANH" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="HOA_DON" Relationship="Self.FK__HOA_DON__MA_KHAC__36B12243" FromRole="KHACH_HANG" ToRole="HOA_DON" />
+  </EntityType>
+  <EntityType Name="KHO_SAN_PHAM">
+    <Key>
+      <PropertyRef Name="MA_SAN_PHAM" />
+    </Key>
+    <Property Name="MA_SAN_PHAM" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TEN_SAN_PHAM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="KHOI_LUONG_NHAP" Type="Double" Nullable="false" />
+    <Property Name="GIA_NHAP_VAO" Type="Double" Nullable="false" />
+    <Property Name="GIA_BAN_RA" Type="Double" Nullable="false" />
+    <Property Name="NGAY_DONG_GOI" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NGAY_HET_HAN" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NHA_CUNG_CAP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NOI_XUAT_XU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ANH" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="CHI_TIET_HOA_DON" Relationship="Self.FK__CHI_TIET___MA_SA__3A81B327" FromRole="KHO_SAN_PHAM" ToRole="CHI_TIET_HOA_DON" />
+  </EntityType>
+  <EntityType Name="NHAN_VIEN">
+    <Key>
+      <PropertyRef Name="MA_NHAN_VIEN" />
+    </Key>
+    <Property Name="MA_NHAN_VIEN" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TEN_NHAN_VIEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GIOI_TINH" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NGAY_SINH" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TEN_BO_PHAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SO_DIEN_THOAI" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="SCMND" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DIA_CHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LUONG_CO_BAN" Type="Double" />
+    <Property Name="ANH" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="GIO_LAM" Relationship="Self.FK__GIO_LAM__MA_NHAN__160F4887" FromRole="NHAN_VIEN" ToRole="GIO_LAM" />
+    <NavigationProperty Name="HOA_DON" Relationship="Self.FK__HOA_DON__MA_NHAN__35BCFE0A" FromRole="NHAN_VIEN" ToRole="HOA_DON" />
+    <NavigationProperty Name="TAI_KHOAN" Relationship="Self.FK__TAI_KHOAN__MA_NH__70DDC3D8" FromRole="NHAN_VIEN" ToRole="TAI_KHOAN" />
+  </EntityType>
+  <EntityType Name="TAI_KHOAN">
+    <Key>
+      <PropertyRef Name="TEN_TAI_KHOAN" />
+    </Key>
+    <Property Name="MA_NHAN_VIEN" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TEN_TAI_KHOAN" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MAT_KHAU" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="NHAN_VIEN" Relationship="Self.FK__TAI_KHOAN__MA_NH__70DDC3D8" FromRole="TAI_KHOAN" ToRole="NHAN_VIEN" />
+    <NavigationProperty Name="TRANG_THAI" Relationship="Self.FK__TRANG_THA__TEN_T__73BA3083" FromRole="TAI_KHOAN" ToRole="TRANG_THAI" />
+  </EntityType>
+  <EntityType Name="TRANG_THAI">
+    <Key>
+      <PropertyRef Name="TEN_TAI_KHOAN" />
+      <PropertyRef Name="MA_CHUC_NANG" />
+    </Key>
+    <Property Name="TEN_TAI_KHOAN" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MA_CHUC_NANG" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TRANG_THAI1" Type="Boolean" />
+    <NavigationProperty Name="CHUC_NANG" Relationship="Self.FK__TRANG_THA__MA_CH__74AE54BC" FromRole="TRANG_THAI" ToRole="CHUC_NANG" />
+    <NavigationProperty Name="TAI_KHOAN" Relationship="Self.FK__TRANG_THA__TEN_T__73BA3083" FromRole="TRANG_THAI" ToRole="TAI_KHOAN" />
+  </EntityType>
+  <Association Name="FK__CHI_TIET___MA_HO__398D8EEE">
+    <End Role="HOA_DON" Type="Self.HOA_DON" Multiplicity="1" />
+    <End Role="CHI_TIET_HOA_DON" Type="Self.CHI_TIET_HOA_DON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOA_DON">
+        <PropertyRef Name="MA_HOA_DON" />
+      </Principal>
+      <Dependent Role="CHI_TIET_HOA_DON">
+        <PropertyRef Name="MA_HOA_DON" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CHI_TIET___MA_SA__3A81B327">
+    <End Role="KHO_SAN_PHAM" Type="Self.KHO_SAN_PHAM" Multiplicity="1" />
+    <End Role="CHI_TIET_HOA_DON" Type="Self.CHI_TIET_HOA_DON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHO_SAN_PHAM">
+        <PropertyRef Name="MA_SAN_PHAM" />
+      </Principal>
+      <Dependent Role="CHI_TIET_HOA_DON">
+        <PropertyRef Name="MA_SAN_PHAM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TRANG_THA__MA_CH__74AE54BC">
+    <End Role="CHUC_NANG" Type="Self.CHUC_NANG" Multiplicity="1" />
+    <End Role="TRANG_THAI" Type="Self.TRANG_THAI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CHUC_NANG">
+        <PropertyRef Name="MA_CHUC_NANG" />
+      </Principal>
+      <Dependent Role="TRANG_THAI">
+        <PropertyRef Name="MA_CHUC_NANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GIO_LAM__MA_NHAN__160F4887">
+    <End Role="NHAN_VIEN" Type="Self.NHAN_VIEN" Multiplicity="1" />
+    <End Role="GIO_LAM" Type="Self.GIO_LAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHAN_VIEN">
+        <PropertyRef Name="MA_NHAN_VIEN" />
+      </Principal>
+      <Dependent Role="GIO_LAM">
+        <PropertyRef Name="MA_NHAN_VIEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HOA_DON__MA_KHAC__36B12243">
+    <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="0..1" />
+    <End Role="HOA_DON" Type="Self.HOA_DON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACH_HANG">
+        <PropertyRef Name="MA_KHACH_HANG" />
+      </Principal>
+      <Dependent Role="HOA_DON">
+        <PropertyRef Name="MA_KHACH_HANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HOA_DON__MA_NHAN__35BCFE0A">
+    <End Role="NHAN_VIEN" Type="Self.NHAN_VIEN" Multiplicity="1" />
+    <End Role="HOA_DON" Type="Self.HOA_DON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHAN_VIEN">
+        <PropertyRef Name="MA_NHAN_VIEN" />
+      </Principal>
+      <Dependent Role="HOA_DON">
+        <PropertyRef Name="MA_NHAN_VIEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TAI_KHOAN__MA_NH__70DDC3D8">
+    <End Role="NHAN_VIEN" Type="Self.NHAN_VIEN" Multiplicity="1" />
+    <End Role="TAI_KHOAN" Type="Self.TAI_KHOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHAN_VIEN">
+        <PropertyRef Name="MA_NHAN_VIEN" />
+      </Principal>
+      <Dependent Role="TAI_KHOAN">
+        <PropertyRef Name="MA_NHAN_VIEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TRANG_THA__TEN_T__73BA3083">
+    <End Role="TAI_KHOAN" Type="Self.TAI_KHOAN" Multiplicity="1" />
+    <End Role="TRANG_THAI" Type="Self.TRANG_THAI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAI_KHOAN">
+        <PropertyRef Name="TEN_TAI_KHOAN" />
+      </Principal>
+      <Dependent Role="TRANG_THAI">
+        <PropertyRef Name="TEN_TAI_KHOAN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QL_VIETFRUIT_1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CHI_TIET_HOA_DON" EntityType="Self.CHI_TIET_HOA_DON" />
+    <EntitySet Name="CHUC_NANG" EntityType="Self.CHUC_NANG" />
+    <EntitySet Name="GIO_LAM" EntityType="Self.GIO_LAM" />
+    <EntitySet Name="HOA_DON" EntityType="Self.HOA_DON" />
+    <EntitySet Name="KHACH_HANG" EntityType="Self.KHACH_HANG" />
+    <EntitySet Name="KHO_SAN_PHAM" EntityType="Self.KHO_SAN_PHAM" />
+    <EntitySet Name="NHAN_VIEN" EntityType="Self.NHAN_VIEN" />
+    <EntitySet Name="TAI_KHOAN" EntityType="Self.TAI_KHOAN" />
+    <EntitySet Name="TRANG_THAI" EntityType="Self.TRANG_THAI" />
+    <AssociationSet Name="FK__CHI_TIET___MA_HO__398D8EEE" Association="Self.FK__CHI_TIET___MA_HO__398D8EEE">
+      <End Role="HOA_DON" EntitySet="HOA_DON" />
+      <End Role="CHI_TIET_HOA_DON" EntitySet="CHI_TIET_HOA_DON" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CHI_TIET___MA_SA__3A81B327" Association="Self.FK__CHI_TIET___MA_SA__3A81B327">
+      <End Role="KHO_SAN_PHAM" EntitySet="KHO_SAN_PHAM" />
+      <End Role="CHI_TIET_HOA_DON" EntitySet="CHI_TIET_HOA_DON" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TRANG_THA__MA_CH__74AE54BC" Association="Self.FK__TRANG_THA__MA_CH__74AE54BC">
+      <End Role="CHUC_NANG" EntitySet="CHUC_NANG" />
+      <End Role="TRANG_THAI" EntitySet="TRANG_THAI" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GIO_LAM__MA_NHAN__160F4887" Association="Self.FK__GIO_LAM__MA_NHAN__160F4887">
+      <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
+      <End Role="GIO_LAM" EntitySet="GIO_LAM" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HOA_DON__MA_KHAC__36B12243" Association="Self.FK__HOA_DON__MA_KHAC__36B12243">
+      <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+      <End Role="HOA_DON" EntitySet="HOA_DON" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HOA_DON__MA_NHAN__35BCFE0A" Association="Self.FK__HOA_DON__MA_NHAN__35BCFE0A">
+      <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
+      <End Role="HOA_DON" EntitySet="HOA_DON" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TAI_KHOAN__MA_NH__70DDC3D8" Association="Self.FK__TAI_KHOAN__MA_NH__70DDC3D8">
+      <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
+      <End Role="TAI_KHOAN" EntitySet="TAI_KHOAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TRANG_THA__TEN_T__73BA3083" Association="Self.FK__TRANG_THA__TEN_T__73BA3083">
+      <End Role="TAI_KHOAN" EntitySet="TAI_KHOAN" />
+      <End Role="TRANG_THAI" EntitySet="TRANG_THAI" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

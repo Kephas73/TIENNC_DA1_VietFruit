@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QL_VIETFRUIT_1ModelStoreContainer" CdmEntityContainer="QL_VIETFRUIT_1Entities">
+    <EntitySetMapping Name="CHI_TIET_HOA_DON">
+      <EntityTypeMapping TypeName="QL_VIETFRUIT_1Model.CHI_TIET_HOA_DON">
+        <MappingFragment StoreEntitySet="CHI_TIET_HOA_DON">
+          <ScalarProperty Name="MA_HOA_DON" ColumnName="MA_HOA_DON" />
+          <ScalarProperty Name="MA_SAN_PHAM" ColumnName="MA_SAN_PHAM" />
+          <ScalarProperty Name="KHOI_LUONG" ColumnName="KHOI_LUONG" />
+          <ScalarProperty Name="DON_GIA" ColumnName="DON_GIA" />
+          <ScalarProperty Name="THANH_TIEN" ColumnName="THANH_TIEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHUC_NANG">
+      <EntityTypeMapping TypeName="QL_VIETFRUIT_1Model.CHUC_NANG">
+        <MappingFragment StoreEntitySet="CHUC_NANG">
+          <ScalarProperty Name="MA_CHUC_NANG" ColumnName="MA_CHUC_NANG" />
+          <ScalarProperty Name="TEN_CHUC_NANG" ColumnName="TEN_CHUC_NANG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GIO_LAM">
+      <EntityTypeMapping TypeName="QL_VIETFRUIT_1Model.GIO_LAM">
+        <MappingFragment StoreEntitySet="GIO_LAM">
+          <ScalarProperty Name="MA_NHAN_VIEN" ColumnName="MA_NHAN_VIEN" />
+          <ScalarProperty Name="MA_GiO_LAM" ColumnName="MA_GiO_LAM" />
+          <ScalarProperty Name="NGAY_LAM" ColumnName="NGAY_LAM" />
+          <ScalarProperty Name="GIO_LAM1" ColumnName="GIO_LAM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HOA_DON">
+      <EntityTypeMapping TypeName="QL_VIETFRUIT_1Model.HOA_DON">
+        <MappingFragment StoreEntitySet="HOA_DON">
+          <ScalarProperty Name="MA_HOA_DON" ColumnName="MA_HOA_DON" />
+          <ScalarProperty Name="MA_NHAN_VIEN" ColumnName="MA_NHAN_VIEN" />
+          <ScalarProperty Name="MA_KHACH_HANG" ColumnName="MA_KHACH_HANG" />
+          <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+          <ScalarProperty Name="TONG_TIEN" ColumnName="TONG_TIEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHACH_HANG">
+      <EntityTypeMapping TypeName="QL_VIETFRUIT_1Model.KHACH_HANG">
+        <MappingFragment StoreEntitySet="KHACH_HANG">
+          <ScalarProperty Name="MA_KHACH_HANG" ColumnName="MA_KHACH_HANG" />
+          <ScalarProperty Name="HO_TEN" ColumnName="HO_TEN" />
+          <ScalarProperty Name="GIOI_TINH" ColumnName="GIOI_TINH" />
+          <ScalarProperty Name="NGAY_SINH" ColumnName="NGAY_SINH" />
+          <ScalarProperty Name="SO_DIEN_THOAI" ColumnName="SO_DIEN_THOAI" />
+          <ScalarProperty Name="SCMND" ColumnName="SCMND" />
+          <ScalarProperty Name="DIEM_TICH_LUY" ColumnName="DIEM_TICH_LUY" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="DIA_CHI" ColumnName="DIA_CHI" />
+          <ScalarProperty Name="ANH" ColumnName="ANH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHO_SAN_PHAM">
+      <EntityTypeMapping TypeName="QL_VIETFRUIT_1Model.KHO_SAN_PHAM">
+        <MappingFragment StoreEntitySet="KHO_SAN_PHAM">
+          <ScalarProperty Name="MA_SAN_PHAM" ColumnName="MA_SAN_PHAM" />
+          <ScalarProperty Name="TEN_SAN_PHAM" ColumnName="TEN_SAN_PHAM" />
+          <ScalarProperty Name="KHOI_LUONG_NHAP" ColumnName="KHOI_LUONG_NHAP" />
+          <ScalarProperty Name="GIA_NHAP_VAO" ColumnName="GIA_NHAP_VAO" />
+          <ScalarProperty Name="GIA_BAN_RA" ColumnName="GIA_BAN_RA" />
+          <ScalarProperty Name="NGAY_DONG_GOI" ColumnName="NGAY_DONG_GOI" />
+          <ScalarProperty Name="NGAY_HET_HAN" ColumnName="NGAY_HET_HAN" />
+          <ScalarProperty Name="NHA_CUNG_CAP" ColumnName="NHA_CUNG_CAP" />
+          <ScalarProperty Name="NOI_XUAT_XU" ColumnName="NOI_XUAT_XU" />
+          <ScalarProperty Name="ANH" ColumnName="ANH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NHAN_VIEN">
+      <EntityTypeMapping TypeName="QL_VIETFRUIT_1Model.NHAN_VIEN">
+        <MappingFragment StoreEntitySet="NHAN_VIEN">
+          <ScalarProperty Name="MA_NHAN_VIEN" ColumnName="MA_NHAN_VIEN" />
+          <ScalarProperty Name="TEN_NHAN_VIEN" ColumnName="TEN_NHAN_VIEN" />
+          <ScalarProperty Name="GIOI_TINH" ColumnName="GIOI_TINH" />
+          <ScalarProperty Name="NGAY_SINH" ColumnName="NGAY_SINH" />
+          <ScalarProperty Name="TEN_BO_PHAN" ColumnName="TEN_BO_PHAN" />
+          <ScalarProperty Name="SO_DIEN_THOAI" ColumnName="SO_DIEN_THOAI" />
+          <ScalarProperty Name="SCMND" ColumnName="SCMND" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="DIA_CHI" ColumnName="DIA_CHI" />
+          <ScalarProperty Name="LUONG_CO_BAN" ColumnName="LUONG_CO_BAN" />
+          <ScalarProperty Name="ANH" ColumnName="ANH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TAI_KHOAN">
+      <EntityTypeMapping TypeName="QL_VIETFRUIT_1Model.TAI_KHOAN">
+        <MappingFragment StoreEntitySet="TAI_KHOAN">
+          <ScalarProperty Name="MA_NHAN_VIEN" ColumnName="MA_NHAN_VIEN" />
+          <ScalarProperty Name="TEN_TAI_KHOAN" ColumnName="TEN_TAI_KHOAN" />
+          <ScalarProperty Name="MAT_KHAU" ColumnName="MAT_KHAU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANG_THAI">
+      <EntityTypeMapping TypeName="QL_VIETFRUIT_1Model.TRANG_THAI">
+        <MappingFragment StoreEntitySet="TRANG_THAI">
+          <ScalarProperty Name="TEN_TAI_KHOAN" ColumnName="TEN_TAI_KHOAN" />
+          <ScalarProperty Name="MA_CHUC_NANG" ColumnName="MA_CHUC_NANG" />
+          <ScalarProperty Name="TRANG_THAI1" ColumnName="TRANG_THAI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
